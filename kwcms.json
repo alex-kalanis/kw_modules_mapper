@@ -1,8 +1,8 @@
 {
   "author": "kalanis",
-  "name": "kw_modules",
+  "name": "kw_modules_mapper",
   "description": "Selecting correct modules in KWCMS",
-  "source": "https://github.com/alex-kalanis/kw_modules",
+  "source": "https://github.com/alex-kalanis/kw_modules_mapper",
   "license": "BSD-3-Clause",
   "require": {
     "alex-kalanis/kw_mapper": "dev-master",

@@ -1,6 +1,6 @@
 {
-    "name": "alex-kalanis/kw_modules",
-    "description": "Selecting correct modules in KWCMS",
+    "name": "alex-kalanis/kw_modules_mapper",
+    "description": "Selecting correct modules - use mapper from KWCMS",
     "keywords": [
         "module",
         "modules"
