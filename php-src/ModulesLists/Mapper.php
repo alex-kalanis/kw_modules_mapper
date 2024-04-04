@@ -18,14 +18,10 @@ use kalanis\kw_modules\ModulesLists\Record;
  */
 class Mapper implements Lists\IModulesList
 {
-    /** @var int */
-    protected $level = Lists\ISitePart::SITE_NOWHERE;
-    /** @var Mapper\Translate */
-    protected $translate = null;
-    /** @var Lists\File\IParamFormat */
-    protected $format = null;
-    /** @var ARecord */
-    protected $record = null;
+    protected int $level = Lists\ISitePart::SITE_NOWHERE;
+    protected Mapper\Translate $translate;
+    protected Lists\File\IParamFormat $format;
+    protected ARecord $record;
 
     public function __construct(ARecord $record, Mapper\Translate $tr, Lists\File\IParamFormat $format)
     {
@@ -82,8 +78,7 @@ class Mapper implements Lists\IModulesList
             $rec = clone $this->record;
             $rec->offsetSet($this->translate->getLevel(), $this->level);
             $records = array_map([$this, 'fillModuleRecord'], $rec->loadMultiple());
-            $recs = array_combine(array_map([$this, 'getRecordName'], $records), $records);
-            return (false === $recs) ? [] : $recs;
+            return array_combine(array_map([$this, 'getRecordName'], $records), $records);
 
         } catch (MapperException $ex) {
             throw new ModuleException($ex->getMessage(), $ex->getCode(), $ex);

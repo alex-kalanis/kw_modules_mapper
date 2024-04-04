@@ -8,7 +8,7 @@
     "alex-kalanis/kw_mapper": "dev-master",
     "alex-kalanis/kw_modules": "dev-master",
     "alex-kalanis/kw_paths": "dev-master",
-    "php": ">=7.2.0"
+    "php": ">=7.4.0"
   },
   "suggest": {
   },

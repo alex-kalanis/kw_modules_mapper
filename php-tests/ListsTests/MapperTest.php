@@ -15,7 +15,6 @@ use kalanis\kw_modules\ModuleException;
 use kalanis\kw_modules\ModulesLists\ParamsFormat;
 use kalanis\kw_modules\ModulesLists\Record;
 use kalanis\kw_modules_mapper\ModulesLists\Mapper;
-use kalanis\kw_storage\Access as storage_access;
 use kalanis\kw_storage\Interfaces\IStorage;
 use kalanis\kw_storage\Storage\Target\Memory;
 use kalanis\kw_storage\StorageException;
@@ -337,10 +336,8 @@ class XFailWriteMapper extends XMapper
 
 class OwnStorageSingleton
 {
-    /** @var self|null */
-    protected static $instance = null;
-    /** @var IStorage|null */
-    private $storage = null;
+    protected static ?OwnStorageSingleton $instance = null;
+    private ?IStorage $storage = null;
 
     public static function getInstance(): self
     {
